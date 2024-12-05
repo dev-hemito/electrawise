@@ -3,7 +3,7 @@
 
 <head>
     <!-- Site Title-->
-    <title>Home</title>
+    <title>Electrawise</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport"
         content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -68,8 +68,9 @@
                                 </div>
                             </div>
                             <div class="rd-navbar-panel-inner">
-                                <div><a class="btn btn-transparent btn-icon btn-icon-left" href="tel:+916238088849"><span
-                                            class="text-middle">+916238088849</span></a></div>
+                                <div><a class="btn btn-transparent btn-icon btn-icon-left"
+                                        href="tel:+916238088849"><span class="text-middle">+916238088849</span></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -117,46 +118,37 @@
                                 <div class="bg-default section-form-slider">
                                     <h5>Get a pricing quote for a residential or business solar panel installation</h5>
                                     <!-- RD Mailform-->
-                                    <form class="rd-mailform text-center offset-top-30"
-                                        data-form-output="form-output-global" data-form-type="contact" method="post"
-                                        action="bat/rd-mailform.php">
-                                        <div class="form-wrap">
-                                            <label class="form-label" for="contact-name1">Your Name</label>
-                                            <input class="form-input" id="contact-name1" type="text" name="name"
-                                                data-constraints="@Required">
+                                    <form id="solar-quote-form" class="rd-mailform text-center offset-top-30">
+                                        <div class="form-wrap mb-3">
+                                            <label class="form-label" for="contact-name">Your Name</label>
+                                            <input class="form-input form-control" id="contact-name" type="text" name="name"
+                                                required>
                                         </div>
-                                        <div class="form-wrap">
-                                            <label class="form-label" for="contact-email1">Email</label>
-                                            <input class="form-input" id="contact-email1" type="email" name="email"
-                                                data-constraints="@Email @Required">
+                                        <div class="form-wrap mb-3">
+                                            <label class="form-label" for="contact-email">Email</label>
+                                            <input class="form-input form-control" id="contact-email" type="email" name="email"
+                                                required>
                                         </div>
-                                        <div class="form-wrap">
-                                            <label class="form-label" for="contact-phone1">Phone</label>
-                                            <input class="form-input" id="contact-phone1" type="text" name="phone"
-                                                data-constraints="@Numeric @Required">
+                                        <div class="form-wrap mb-3">
+                                            <label class="form-label" for="contact-phone">Phone</label>
+                                            <input class="form-input form-control" id="contact-phone" type="tel" name="phone"
+                                                required>
                                         </div>
-                                        <div class="form-wrap">
-                                            <!--Select 2-->
-                                            <select class="form-input select-filter" name="commercial-system"
-                                                data-placeholder="Do you need a residential or commercial system?"
-                                                data-minimum-results-search="Infinity" data-constraints="@Required">
-                                                <option>Do you need a residential or commercial system?</option>
-                                                <option value="1">Residential system</option>
-                                                <option value="2">Commercial system</option>
+                                        <div class="form-wrap mb-3">
+                                            <label class="form-label" for="contact-location">Location</label>
+                                            <input class="form-input form-control" id="contact-location" type="text" name="location"
+                                                required >
+                                        </div>
+                                        <div class="form-wrap mb-3">
+                                            <select class="form-select" id="project-type" name="project_type" required>
+                                                <option value="">Select Project Type</option>
+                                                <option value="residential">Residential System</option>
+                                                <option value="commercial">Commercial System</option>
                                             </select>
                                         </div>
-                                        <div class="form-wrap">
-                                            <!--Select 2-->
-                                            <select class="form-input select-filter" name="electricity-bill"
-                                                data-placeholder="What is your average electricity bill?"
-                                                data-minimum-results-search="Infinity" data-constraints="@Required">
-                                                <option>What is your average electricity bill?</option>
-                                                <option value="1">100</option>
-                                                <option value="2">200</option>
-                                                <option value="3">300</option>
-                                            </select>
-                                        </div>
-                                        <button class="btn btn-primary offset-top-30" type="submit">GET A QUOTE</button>
+                                        
+                                        <div id="form-status" class="mt-3"></div>
+                                        <button class="btn btn-primary mt-3" type="submit">GET A QUOTE</button>
                                     </form>
                                 </div>
                             </div>
@@ -563,200 +555,236 @@
                     </div>
                 </div>
                 <!-- <div class="offset-top-40 offset-md-top-60"><a class="btn btn-primary" href="#">view all products</a> -->
+            </div>
+    </div>
+    </section>
+
+    <div class="container">
+        <hr class="hr">
+    </div>
+
+
+
+    <!-- support-->
+    <section>
+        <!-- Material Parallax-->
+        <div class="parallax-container" data-parallax-img="images/parallax-05.jpg">
+            <div class="parallax-content">
+                <div class="container section-75 section-md-90 text-md-start">
+                    <div class="row justify-content-sm-center justify-content-xl-between align-items-md-center">
+                        <div class="col-md-6 col-xl-5"><img class="img-responsive" src="./images/home-07-466x459.png"
+                                width="466" height="459" alt=""></div>
+                        <div class="col-md-6 col-xl-5">
+                            <h3 class="text-white">We're dedicated to providing free support</h3>
+                            <p class="h6 font-default text-transform-none text-light text-white offset-top-35">Just
+                                after we'll put the solar panels up on your roof, you can count on our free customer
+                                support!</p><a class="btn btn-primary btn-shadow offset-top-35 offset-sm-top-65"
+                                href="#">GET A QUOTE</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <div class="container">
-            <hr class="hr">
         </div>
+    </section>
 
-
-
-        <!-- support-->
-        <section>
-            <!-- Material Parallax-->
-            <div class="parallax-container" data-parallax-img="images/parallax-05.jpg">
-                <div class="parallax-content">
-                    <div class="container section-75 section-md-90 text-md-start">
-                        <div class="row justify-content-sm-center justify-content-xl-between align-items-md-center">
-                            <div class="col-md-6 col-xl-5"><img class="img-responsive"
-                                    src="./images/home-07-466x459.png" width="466" height="459" alt=""></div>
-                            <div class="col-md-6 col-xl-5">
-                                <h3 class="text-white">We're dedicated to providing free support</h3>
-                                <p class="h6 font-default text-transform-none text-light text-white offset-top-35">Just
-                                    after we'll put the solar panels up on your roof, you can count on our free customer
-                                    support!</p><a class="btn btn-primary btn-shadow offset-top-35 offset-sm-top-65"
-                                    href="#">GET A QUOTE</a>
+    <!-- contacts-->
+    <section class="section-top-75 section-md-top-135" id="contacts">
+        <div class="container">
+            <h3>Contact Us</h3>
+            <hr class="hr offset-top-35">
+            <div
+                class="row row-50 justify-content-sm-center offset-top-0 features-list-variant-2 section-top-70 section-bottom-80">
+                <div class="col-sm-8 col-md-10 col-xl-6 text-md-start row-30">
+                    <div>
+                        <div class="">
+                            <div class=""><img class="img-responsive img-rounded img-fullwidth"
+                                    src="./images/home-08-270x180.jpg" alt="" width="270" height="180" />
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- contacts-->
-        <section class="section-top-75 section-md-top-135" id="contacts">
-            <div class="container">
-                <h3>Contact Us</h3>
-                <hr class="hr offset-top-35">
-                <div
-                    class="row row-50 justify-content-sm-center offset-top-0 features-list-variant-2 section-top-70 section-bottom-80">
-                    <div class="col-sm-8 col-md-10 col-xl-6 text-md-start row-30">
-                        <div>
                             <div class="">
-                                <div class=""><img class="img-responsive img-rounded img-fullwidth"
-                                        src="./images/home-08-270x180.jpg" alt="" width="270" height="180" />
-                                </div>
-                                <div class="">
-                                    <h6 class="offset-top-10 text-transform-none"> Near West Gate Mahadeva Temple
-                                        TC1/5613,</h6>
-                                    <p class="text-regular line-height-21 offset-top-8"> Thapasya, Kazhakkuttom,
-                                        <br class="visible-lg-inline"> Thiruvananthapuram, Kerala-695582
-                                    </p>
-                                    <dl class="dl-horizontal-variant-1 offset-sm-top-25 text-md-start">
-                                        <dt class="fw-bold text-dark">Phone:</dt>
-                                        <dd><a class="text-base text-regular" href="tel:+916238088849">+916238088849</a>
-                                        </dd>
-                                    </dl>
-                                    <dl class="dl-horizontal-variant-1 text-md-start">
-                                        <dt class="fw-bold text-dark">Fax:</dt>
-                                        <dd><a class="text-base text-regular" href="tel:+918848582003">+918848582003</a>
-                                        </dd>
-                                    </dl>
-                                </div>
+                                <h6 class="offset-top-10 text-transform-none"> Near West Gate Mahadeva Temple
+                                    TC1/5613,</h6>
+                                <p class="text-regular line-height-21 offset-top-8"> Thapasya, Kazhakkuttom,
+                                    <br class="visible-lg-inline"> Thiruvananthapuram, Kerala-695582
+                                </p>
+                                <dl class="dl-horizontal-variant-1 offset-sm-top-25 text-md-start">
+                                    <dt class="fw-bold text-dark">Phone:</dt>
+                                    <dd><a class="text-base text-regular" href="tel:+916238088849">+916238088849</a>
+                                    </dd>
+                                </dl>
+                                <dl class="dl-horizontal-variant-1 text-md-start">
+                                    <dt class="fw-bold text-dark">Fax:</dt>
+                                    <dd><a class="text-base text-regular" href="tel:+918848582003">+918848582003</a>
+                                    </dd>
+                                </dl>
                             </div>
                         </div>
-
                     </div>
-                    <div class="col-md-10 col-xl-6">
-                        <div class="inset-lg-left-110">
-                            <h5>Get a pricing quote for a residential or business solar panel installation</h5>
-                            <!-- RD Mailform-->
-                            <form class="rd-mailform text-center offset-top-30" data-form-output="form-output-global"
-                                data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                                <div class="form-wrap">
-                                    <label class="form-label" for="contact-name">Your Name</label>
-                                    <input class="form-input" id="contact-name" type="text" name="name"
-                                        data-constraints="@Required">
-                                </div>
-                                <div class="form-wrap">
-                                    <label class="form-label" for="contact-email">Email</label>
-                                    <input class="form-input" id="contact-email" type="email" name="email"
-                                        data-constraints="@Email @Required">
-                                </div>
-                                <div class="form-wrap">
-                                    <label class="form-label" for="contact-phone">Phone</label>
-                                    <input class="form-input" id="contact-phone" type="text" name="phone"
-                                        data-constraints="@Numeric @Required">
-                                </div>
-                                <div class="form-wrap">
-                                    <!--Select 2-->
-                                    <select class="form-input select-filter" name="commercial-system"
-                                        data-placeholder="Do you need a residential or commercial system?"
-                                        data-minimum-results-for-search="Infinity" data-constraints="@Required">
-                                        <option>Do you need a residential or commercial system?</option>
-                                        <option value="1">Residential system</option>
-                                        <option value="2">Commercial system</option>
-                                    </select>
-                                </div>
-                                <div class="form-wrap">
-                                    <!--Select 2-->
-                                    <select class="form-input select-filter" name="electricity-bill"
-                                        data-placeholder="What is your average electricity bill?"
-                                        data-minimum-results-for-search="Infinity" data-constraints="@Required">
-                                        <option>What is your average electricity bill?</option>
-                                        <option value="1">100</option>
-                                        <option value="2">200</option>
-                                        <option value="3">300</option>
-                                    </select>
-                                </div>
-                                <button class="btn btn-primary offset-top-30" type="submit">GET A QUOTE</button>
-                            </form>
-                        </div>
+
+                </div>
+                <div class="col-md-10 col-xl-6">
+                    <div class="inset-lg-left-110">
+                        <h5>Get a pricing quote for a residential or business solar panel installation</h5>
+                        <!-- Solar Quote Form -->
+                        <form id="solar-quote-form" class="rd-mailform text-center offset-top-30">
+                            <div class="form-wrap mb-3">
+                                <label class="form-label" for="contact-name">Your Name</label>
+                                <input class="form-input form-control" id="contact-name" type="text" name="name"
+                                    required>
+                            </div>
+                            <div class="form-wrap mb-3">
+                                <label class="form-label" for="contact-email">Email</label>
+                                <input class="form-input form-control" id="contact-email" type="email" name="email"
+                                    required>
+                            </div>
+                            <div class="form-wrap mb-3">
+                                <label class="form-label" for="contact-phone">Phone</label>
+                                <input class="form-input form-control" id="contact-phone" type="tel" name="phone"
+                                    required>
+                            </div>
+                            <div class="form-wrap mb-3">
+                                <label class="form-label" for="contact-location">Location</label>
+                                <input class="form-input form-control" id="contact-location" type="text" name="location"
+                                    required >
+                            </div>
+                            <div class="form-wrap mb-3">
+                                <select class="form-select" id="project-type" name="project_type" required>
+                                    <option value="">Select Project Type</option>
+                                    <option value="residential">Residential System</option>
+                                    <option value="commercial">Commercial System</option>
+                                </select>
+                            </div>
+                            
+                            <div id="form-status" class="mt-3"></div>
+                            <button class="btn btn-primary mt-3" type="submit">GET A QUOTE</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Page Footer-->
+    <footer class="page-footer bg-light text-dark py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 text-center mb-4">
+                    <!-- Logo -->
+                    <a href="index.html" class="navbar-brand mb-3">
+                        <img src="./images/logo-footer.png" alt="Electrawise Logo"
+                            style="max-height: 70px; max-width: 200px;">
+                    </a>
+                </div>
 
-        <!-- Page Footer-->
-        <footer class="page-footer bg-light text-dark py-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 text-center mb-4">
-                        <!-- Logo -->
-                        <a href="index.html" class="navbar-brand mb-3">
-                            <img src="./images/logo-footer.png" alt="Electrawise Logo" style="max-height: 70px; max-width: 200px;">
+                <!-- Social Media Links -->
+                <div class="col-12 text-center">
+                    <div class="social-links mb-4">
+                        <a href="#" class="btn   mx-2" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="btn   mx-2" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="btn   mx-2" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
                         </a>
                     </div>
-                    
-                    <!-- Social Media Links -->
-                    <div class="col-12 text-center">
-                        <div class="social-links mb-4">
-                            <a href="#" class="btn   mx-2" aria-label="Facebook">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                            <a href="#" class="btn   mx-2" aria-label="Instagram">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                            <a href="#" class="btn   mx-2" aria-label="WhatsApp">
-                                <i class="bi bi-whatsapp"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- Copyright -->
-                        <p class="text-muted mb-0">
-                            Copyright © <span class="copyright-year"></span> 
-                            <span class="text-primary">Electrawise</span> 
-                            All rights reserved
-                        </p>
-                    </div>
+
+                    <!-- Copyright -->
+                    <p class="text-muted mb-0">
+                        Copyright © <span class="copyright-year"></span>
+                        <span class="text-primary">Electrawise</span>
+                        All rights reserved
+                    </p>
                 </div>
             </div>
-        </footer>
-        
-        <script>
-            // Dynamically update copyright year
-            document.querySelector('.copyright-year').textContent = new Date().getFullYear();
-        </script>
-        
-        <style>
-            /* Additional custom styles */
-            .page-footer {
-                background-color: #f8f9fa;
-                transition: background-color 0.3s ease;
-            }
-        
+        </div>
+    </footer>
+    <script>
+        // Initialize EmailJS with your User ID
+        (function() {
+            emailjs.init("Ovx-FkubPTAju88dy"); // Replace with your actual EmailJS User ID
+        })();
+
+        // Form submission handler
+        document.getElementById('solar-quote-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Show loading state
+            const submitButton = event.target.querySelector('button');
+            const formStatus = document.getElementById('form-status');
+            submitButton.disabled = true;
+            formStatus.innerHTML = '<div class="text-primary">Sending...</div>';
+
+            // Collect form data
+            const formData = {
+                name: document.getElementById('contact-name').value,
+                email: document.getElementById('contact-email').value,
+                phone: document.getElementById('contact-phone').value,
+                location: document.getElementById('contact-location').value,
+                project_type: document.getElementById('project-type').value
+            };
+
+            // Send email using EmailJS
+            emailjs.send(
+                "service_wwx5muf",  // Replace with your EmailJS Service ID
+                "template_wloyykp", // Replace with your EmailJS Template ID
+                formData
+            ).then(
+                function(response) {
+                    formStatus.innerHTML = '<div class="text-success">Quote request sent successfully!</div>';
+                    event.target.reset(); // Clear the form
+                    submitButton.disabled = false;
+                },
+                function(error) {
+                    console.log("error sending: ",error)
+                    formStatus.innerHTML = '<div class="text-danger">Failed to send quote request. Please try again.</div>';
+                    submitButton.disabled = false;
+                }
+            );
+        });
+    </script>
+    <script>
+        // Dynamically update copyright year
+        document.querySelector('.copyright-year').textContent = new Date().getFullYear();
+    </script>
+
+    <style>
+        /* Additional custom styles */
+        .page-footer {
+            background-color: #f8f9fa;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-floating {
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .btn-floating:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-floating i {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 576px) {
             .btn-floating {
-                border-radius: 50%;
-                width: 45px;
-                height: 45px;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.3s ease;
+                width: 40px;
+                height: 40px;
             }
-        
-            .btn-floating:hover {
-                transform: scale(1.1);
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            }
-        
+
             .btn-floating i {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
-        
-            @media (max-width: 576px) {
-                .btn-floating {
-                    width: 40px;
-                    height: 40px;
-                }
-                
-                .btn-floating i {
-                    font-size: 1rem;
-                }
-            }
-        </style>
+        }
+    </style>
     </div>
     <!-- Global Mailform Output-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
