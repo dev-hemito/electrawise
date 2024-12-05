@@ -1607,7 +1607,7 @@ fieldset[disabled] .btn-white-transparent {
 }
 
 .btn-transparent {
-	color: #fff;
+	color: #000000;
 	background-color: transparent;
 	border-color: transparent;
 }
@@ -10200,7 +10200,7 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 }
 
 .header-transparent {
-	position: absolute;
+
 	top: 0;
 	right: 0;
 	left: 0;
@@ -10302,7 +10302,7 @@ fieldset[disabled] .header-transparent .rd-navbar-fixed .btn-transparent {
 
 .header-transparent .rd-navbar-static .rd-navbar-nav > li > a,
 .header-transparent .rd-navbar-fullwidth .rd-navbar-nav > li > a {
-	color: #fff;
+	color: #000000;
 	position: relative;
 }
 
@@ -10455,7 +10455,7 @@ fieldset[disabled] .header-transparent .rd-navbar-fixed .btn-transparent {
 .open >
 .header-transparent .rd-navbar-fullwidth.rd-navbar--is-stuck .btn-transparent.dropdown-toggle.focus {
 	color: #F68F28;
-	background-color: transparent;
+	background-color: white;
 	border-color: transparent;
 }
 
