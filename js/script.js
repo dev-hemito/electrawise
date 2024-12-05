@@ -331,7 +331,7 @@
 		if (isDesktop) {
 			$().UItoTop({
 				easingType:     'easeOutQuart',
-				containerClass: 'ui-to-top fa fa-angle-up'
+				containerClass: 'ui-to-top bi bi-arrow-up-short'
 			});
 		}
 
