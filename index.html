@@ -142,30 +142,32 @@
                                     <a class="btn btn-primary" href="#about">Find Out More</a>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-xl-5 ">
+                            <div class="col-lg-6 col-xl-5">
                                 <div class="bg-default section-form-slider">
                                     <h5>Get a pricing quote for a residential or business solar panel installation</h5>
                                     <!-- RD Mailform-->
                                     <form id="solar-quote-form" class="rd-mailform text-center offset-top-30">
                                         <div class="form-wrap mb-3">
                                             <label class="form-label" for="contact-name">Your Name</label>
-                                            <input class="form-input form-control" id="contact-name" type="text"
-                                                name="name" required>
+                                            <input class="form-input form-control" id="contact-name" type="text" name="name" required>
+                                            <div class="invalid-feedback">Please enter your name</div>
                                         </div>
                                         <div class="form-wrap mb-3">
                                             <label class="form-label" for="contact-email">Email</label>
-                                            <input class="form-input form-control" id="contact-email" type="email"
-                                                name="email" required>
+                                            <input class="form-input form-control" id="contact-email" type="email" name="email" 
+                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                                            <div class="invalid-feedback">Please enter a valid email address</div>
                                         </div>
                                         <div class="form-wrap mb-3">
                                             <label class="form-label" for="contact-phone">Phone</label>
-                                            <input class="form-input form-control" id="contact-phone" type="tel"
-                                                name="phone" required>
+                                            <input class="form-input form-control" id="contact-phone" type="tel" name="phone" 
+                                                pattern="[0-9()-\s]+" required>
+                                            <div class="invalid-feedback">Please enter a valid phone number</div>
                                         </div>
                                         <div class="form-wrap mb-3">
                                             <label class="form-label" for="contact-location">Location</label>
-                                            <input class="form-input form-control" id="contact-location" type="text"
-                                                name="location" required>
+                                            <input class="form-input form-control" id="contact-location" type="text" name="location" required>
+                                            <div class="invalid-feedback">Please enter your location</div>
                                         </div>
                                         <div class="form-wrap mb-3">
                                             <select class="form-select" id="project-type" name="project_type" required>
@@ -173,10 +175,14 @@
                                                 <option value="residential">Residential System</option>
                                                 <option value="commercial">Commercial System</option>
                                             </select>
+                                            <div class="invalid-feedback">Please select a project type</div>
                                         </div>
-
-                                        <div id="form-status" class="mt-3"></div>
-                                        <button class="btn btn-primary mt-3" type="submit">GET A QUOTE</button>
+                            
+                                        <div id="form-status" class="mt-3" role="alert"></div>
+                                        <button class="btn btn-primary mt-3" type="submit">
+                                            <span class="button-text">GET A QUOTE</span>
+                                            <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                        </button>
                                     </form>
                                 </div>
                             </div>
@@ -724,49 +730,87 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        // Initialize EmailJS with your User ID
-        (function () {
-            emailjs.init("Ovx-FkubPTAju88dy"); // Replace with your actual EmailJS User ID
-        })();
-
-        // Form submission handler
-        document.getElementById('solar-quote-form').addEventListener('submit', function (event) {
+    (function() {
+        'use strict';
+    
+        // Initialize EmailJS
+        emailjs.init("Ovx-FkubPTAju88dy");
+    
+        // Form elements
+        const form = document.getElementById('solar-quote-form');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const buttonText = submitButton.querySelector('.button-text');
+        const spinner = submitButton.querySelector('.spinner-border');
+        const formStatus = document.getElementById('form-status');
+    
+        // Helper function to show loading state
+        function setLoadingState(isLoading) {
+            submitButton.disabled = isLoading;
+            spinner.classList.toggle('d-none', !isLoading);
+            buttonText.style.display = isLoading ? 'none' : 'inline';
+        }
+    
+        // Helper function to show status message
+        function showStatus(message, type) {
+            formStatus.innerHTML = `<div class="alert alert-${type}" role="alert">${message}</div>`;
+        }
+    
+        // Form validation and submission
+        form.addEventListener('submit', async function(event) {
             event.preventDefault();
-
-            // Show loading state
-            const submitButton = event.target.querySelector('button');
-            const formStatus = document.getElementById('form-status');
-            submitButton.disabled = true;
-            formStatus.innerHTML = '<div class="text-primary">Sending...</div>';
-
+    
+            // Clear previous status
+            formStatus.innerHTML = '';
+    
+            // Check form validity
+            if (!form.checkValidity()) {
+                event.stopPropagation();
+                form.classList.add('was-validated');
+                return;
+            }
+    
             // Collect form data
             const formData = {
-                name: document.getElementById('contact-name').value,
-                email: document.getElementById('contact-email').value,
-                phone: document.getElementById('contact-phone').value,
-                location: document.getElementById('contact-location').value,
+                name: document.getElementById('contact-name').value.trim(),
+                email: document.getElementById('contact-email').value.trim(),
+                phone: document.getElementById('contact-phone').value.trim(),
+                location: document.getElementById('contact-location').value.trim(),
                 project_type: document.getElementById('project-type').value
             };
-
-            // Send email using EmailJS
-            emailjs.send(
-                "service_wwx5muf",  // Replace with your EmailJS Service ID
-                "template_wloyykp", // Replace with your EmailJS Template ID
-                formData
-            ).then(
-                function (response) {
-                    formStatus.innerHTML = '<div class="text-success">Quote request sent successfully!</div>';
-                    event.target.reset(); // Clear the form
-                    submitButton.disabled = false;
-                },
-                function (error) {
-                    console.log("error sending: ", error)
-                    formStatus.innerHTML = '<div class="text-danger">Failed to send quote request. Please try again.</div>';
-                    submitButton.disabled = false;
-                }
-            );
+    
+            // Show loading state
+            setLoadingState(true);
+    
+            try {
+                // Send email using EmailJS
+                await emailjs.send(
+                    "service_wwx5muf",
+                    "template_wloyykp",
+                    formData
+                );
+    
+                // Show success message
+                showStatus('Quote request sent successfully! We\'ll contact you soon.', 'success');
+                form.reset();
+                form.classList.remove('was-validated');
+    
+            } catch (error) {
+                console.error('EmailJS Error:', error);
+                showStatus('Failed to send quote request. Please try again or contact us directly.', 'danger');
+            } finally {
+                setLoadingState(false);
+            }
         });
+    
+        // Real-time validation for phone number
+        const phoneInput = document.getElementById('contact-phone');
+        phoneInput.addEventListener('input', function(e) {
+            const phoneNumber = e.target.value.replace(/[^\d()-\s]/g, '');
+            e.target.value = phoneNumber;
+        });
+    })();
     </script>
     <script>
         // Dynamically update copyright year
