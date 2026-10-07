@@ -142,228 +142,47 @@
                                     <a class="btn btn-primary" href="#about">Find Out More</a>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-xl-5">
+                           <div class="col-lg-6 col-xl-5">
                                 <div class="bg-default section-form-slider">
                                     <h5>Get a pricing quote for a residential or business solar panel installation</h5>
                                     <!-- RD Mailform-->
-                               <form id="solar-quote-form" class="rd-mailform text-center offset-top-30">
-
-    <!-- Your Name -->
-    <div class="form-wrap mb-3">
-        <label class="form-label" for="contact-name">Your Name</label>
-        <input
-            class="form-input form-control"
-            id="contact-name"
-            type="text"
-            name="name"
-            required
-        >
-        <div class="invalid-feedback">Please enter your name</div>
-    </div>
-
-    <!-- Email -->
-    <div class="form-wrap mb-3">
-        <label class="form-label" for="contact-email">Email</label>
-        <input
-            class="form-input form-control"
-            id="contact-email"
-            type="email"
-            name="email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            required
-        >
-        <div class="invalid-feedback">Please enter a valid email address</div>
-    </div>
-
-    <!-- Phone -->
-    <div class="form-wrap mb-3">
-        <label class="form-label" for="contact-phone">Phone</label>
-        <input
-            class="form-input form-control"
-            id="contact-phone"
-            type="tel"
-            name="phone"
-            pattern="[0-9()+\-\s]+"
-            required
-        >
-        <div class="invalid-feedback">Please enter a valid phone number</div>
-    </div>
-
-    <!-- Location -->
-    <div class="form-wrap mb-3">
-        <label class="form-label" for="contact-location">Location</label>
-        <input
-            class="form-input form-control"
-            id="contact-location"
-            type="text"
-            name="location"
-            required
-        >
-        <div class="invalid-feedback">Please enter your location</div>
-    </div>
-
-    <!-- Project Type -->
-    <div class="form-wrap mb-3">
-        <select
-            class="form-select"
-            id="project-type"
-            name="project_type"
-            required
-        >
-            <option value="">Select Project Type</option>
-            <option value="residential">Residential System</option>
-            <option value="commercial">Commercial System</option>
-        </select>
-
-        <div class="invalid-feedback">
-            Please select a project type
-        </div>
-    </div>
-
-    <!-- NEW QUESTION 1 -->
-    <div class="form-wrap mb-3">
-        <label class="form-label" for="installation-time">
-            എന്നാണ് നിങ്ങൾ panel install ചെയ്യാൻ ഉദ്ദേശിക്കുന്നത്?
-        </label>
-
-        <select
-            class="form-select"
-            id="installation-time"
-            name="installation_time"
-            required
-        >
-            <option value="">Select an option</option>
-            <option value="immediately">Immediately</option>
-            <option value="within_1_month">Within 1 Month</option>
-            <option value="within_3_months">Within 3 Months</option>
-            <option value="within_6_months">Within 6 Months</option>
-            <option value="not_decided">Not Decided Yet</option>
-        </select>
-
-        <div class="invalid-feedback">
-            Please select an option
-        </div>
-    </div>
-
-    <!-- NEW QUESTION 2 -->
-    <div class="form-wrap mb-3">
-        <label class="form-label" for="available-tomorrow">
-            നാളെ ഞങ്ങൾ നിങ്ങളെ ബന്ധപ്പെട്ടാൽ നിങ്ങൾ ലഭ്യമാകുമോ?
-        </label>
-
-        <select
-            class="form-select"
-            id="available-tomorrow"
-            name="available_tomorrow"
-            required
-        >
-            <option value="">Please Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select>
-
-        <div class="invalid-feedback">
-            Please select an option
-        </div>
-    </div>
-
-    <!-- Full Name -->
-    <div class="form-wrap mb-3">
-        <label class="form-label" for="full-name">Full Name</label>
-        <input
-            class="form-input form-control"
-            id="full-name"
-            type="text"
-            name="full_name"
-            required
-        >
-        <div class="invalid-feedback">
-            Please enter your full name
-        </div>
-    </div>
-
-    <!-- Phone Number -->
-    <div class="form-wrap mb-3">
-        <label class="form-label" for="phone-number">Phone Number</label>
-        <input
-            class="form-input form-control"
-            id="phone-number"
-            type="tel"
-            name="phone_number"
-            pattern="[0-9()+\-\s]+"
-            required
-        >
-        <div class="invalid-feedback">
-            Please enter a valid phone number
-        </div>
-    </div>
-
-    <!-- E Mail -->
-    <div class="form-wrap mb-3">
-        <label class="form-label" for="email">E Mail</label>
-        <input
-            class="form-input form-control"
-            id="email"
-            type="email"
-            name="email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            required
-        >
-        <div class="invalid-feedback">
-            Please enter a valid email address
-        </div>
-    </div>
-
-    <!-- City -->
-    <div class="form-wrap mb-3">
-        <label class="form-label" for="city">City</label>
-        <input
-            class="form-input form-control"
-            id="city"
-            type="text"
-            name="city"
-            required
-        >
-        <div class="invalid-feedback">
-            Please enter your city
-        </div>
-    </div>
-
-    <!-- Additional Phone Number -->
-    <div class="form-wrap mb-3">
-        <label class="form-label" for="additional-phone">
-            Additional Phone Number
-        </label>
-
-        <input
-            class="form-input form-control"
-            id="additional-phone"
-            type="tel"
-            name="additional_phone"
-            pattern="[0-9()+\-\s]+"
-        >
-
-        <div class="invalid-feedback">
-            Please enter a valid phone number
-        </div>
-    </div>
-
-    <!-- Form Status -->
-    <div id="form-status" class="mt-3" role="alert"></div>
-
-    <!-- Submit Button -->
-    <button class="btn btn-primary mt-3" type="submit">
-        <span class="button-text">GET A QUOTE</span>
-
-        <span
-            class="spinner-border spinner-border-sm d-none"
-            role="status"
-            aria-hidden="true">
-        </span>
-    </button>
-
-</form>
-                                      </div>
+                                    <form id="solar-quote-form" class="rd-mailform text-center offset-top-30" novalidate="novalidate">
+                                        <div class="form-wrap mb-3">
+                                            <label class="form-label rd-input-label" for="contact-name">Your Name</label>
+                                            <input class="form-input form-control" id="contact-name" type="text" name="name" required="">
+                                            <div class="invalid-feedback">Please enter your name</div>
+                                        </div>
+                                        <div class="form-wrap mb-3">
+                                            <label class="form-label rd-input-label" for="contact-email">Email</label>
+                                            <input class="form-input form-control" id="contact-email" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="">
+                                            <div class="invalid-feedback">Please enter a valid email address</div>
+                                        </div>
+                                        <div class="form-wrap mb-3">
+                                            <label class="form-label rd-input-label" for="contact-phone">Phone</label>
+                                            <input class="form-input form-control" id="contact-phone" type="tel" name="phone" pattern="[0-9()-\s]+" required="">
+                                            <div class="invalid-feedback">Please enter a valid phone number</div>
+                                        </div>
+                                        <div class="form-wrap mb-3">
+                                            <label class="form-label rd-input-label" for="contact-location">Location</label>
+                                            <input class="form-input form-control" id="contact-location" type="text" name="location" required="">
+                                            <div class="invalid-feedback">Please enter your location</div>
+                                        </div>
+                                        <div class="form-wrap mb-3">
+                                            <select class="form-select select2-hidden-accessible" id="project-type" name="project_type" required="" data-select2-id="project-type" tabindex="-1" aria-hidden="true">
+                                                <option value="" data-select2-id="2">Select Project Type</option>
+                                                <option value="residential">Residential System</option>
+                                                <option value="commercial">Commercial System</option>
+                                            </select><span class="select2 select2-container select2-container--bootstrap" dir="ltr" data-select2-id="1" style="width: 402.5px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-project-type-container"><span class="select2-selection__rendered" id="select2-project-type-container" role="textbox" aria-readonly="true" title="Select Project Type">Select Project Type</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            <div class="invalid-feedback">Please select a project type</div>
+                                        </div>
+                            
+                                        <div id="form-status" class="mt-3" role="alert"></div>
+                                        <button class="btn btn-primary mt-3" type="submit">
+                                            <span class="button-text">GET A QUOTE</span>
+                                            <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
