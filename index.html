@@ -11,7 +11,7 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-TRFKTNQB');</script>
-    <!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
     <!-- Site Title-->
     <title>Electrawise</title>
     <meta name="format-detection" content="telephone=no">
@@ -32,7 +32,7 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRFKTNQB" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <!-- End Google Tag Manager (noscript) -->
     <div class="preloader">
         <div class="preloader-body">
             <div class="cssload-container">
@@ -150,7 +150,7 @@
 
     <!-- Your Name -->
     <div class="form-wrap mb-3">
-        <label class="form-label" for="contact-name">Your Name</label>
+        <label class="form-label" for="contact-name" style="position: relative; display: block; transform: none; text-align: left; margin-bottom: 8px;">Your Name</label>
         <input
             class="form-input form-control"
             id="contact-name"
@@ -163,7 +163,7 @@
 
     <!-- Email -->
     <div class="form-wrap mb-3">
-        <label class="form-label" for="contact-email">Email</label>
+        <label class="form-label" for="contact-email" style="position: relative; display: block; transform: none; text-align: left; margin-bottom: 8px;">Email</label>
         <input
             class="form-input form-control"
             id="contact-email"
@@ -177,7 +177,7 @@
 
     <!-- Phone -->
     <div class="form-wrap mb-3">
-        <label class="form-label" for="contact-phone">Phone</label>
+        <label class="form-label" for="contact-phone" style="position: relative; display: block; transform: none; text-align: left; margin-bottom: 8px;">Phone</label>
         <input
             class="form-input form-control"
             id="contact-phone"
@@ -191,7 +191,7 @@
 
     <!-- Location -->
     <div class="form-wrap mb-3">
-        <label class="form-label" for="contact-location">Location</label>
+        <label class="form-label" for="contact-location" style="position: relative; display: block; transform: none; text-align: left; margin-bottom: 8px;">Location</label>
         <input
             class="form-input form-control"
             id="contact-location"
@@ -264,7 +264,7 @@
 
     <!-- Full Name -->
     <div class="form-wrap mb-3">
-        <label class="form-label" for="full-name">Full Name</label>
+        <label class="form-label" for="full-name" style="position: relative; display: block; transform: none; text-align: left; margin-bottom: 8px;">Full Name</label>
         <input
             class="form-input form-control"
             id="full-name"
@@ -279,7 +279,7 @@
 
     <!-- Phone Number -->
     <div class="form-wrap mb-3">
-        <label class="form-label" for="phone-number">Phone Number</label>
+        <label class="form-label" for="phone-number" style="position: relative; display: block; transform: none; text-align: left; margin-bottom: 8px;">Phone Number</label>
         <input
             class="form-input form-control"
             id="phone-number"
@@ -295,7 +295,7 @@
 
     <!-- E Mail -->
     <div class="form-wrap mb-3">
-        <label class="form-label" for="email">E Mail</label>
+        <label class="form-label" for="email" style="position: relative; display: block; transform: none; text-align: left; margin-bottom: 8px;">E Mail</label>
         <input
             class="form-input form-control"
             id="email"
@@ -311,7 +311,7 @@
 
     <!-- City -->
     <div class="form-wrap mb-3">
-        <label class="form-label" for="city">City</label>
+        <label class="form-label" for="city" style="position: relative; display: block; transform: none; text-align: left; margin-bottom: 8px;">City</label>
         <input
             class="form-input form-control"
             id="city"
@@ -326,7 +326,7 @@
 
     <!-- Additional Phone Number -->
     <div class="form-wrap mb-3">
-        <label class="form-label" for="additional-phone">
+        <label class="form-label" for="additional-phone" style="position: relative; display: block; transform: none; text-align: left; margin-bottom: 8px;">
             Additional Phone Number
         </label>
         <input
@@ -718,7 +718,7 @@
                                 <p class="h6 font-default text-transform-none text-light text-white offset-top-35">
                                     Empowering homes and businesses to harness the sun's energy. Join the thousands of
                                     satisfied customers who have already experienced the benefits of clean,
-                                    renewable solar power.</p><a
+                                    renewable solar power.</p><a
                                     class="btn btn-primary-transparent text-white offset-top-35 offset-sm-top-65"
                                     href="tel:+916238088849">Know more</a>
                             </div>
@@ -944,13 +944,19 @@
                 return;
             }
     
-            // Collect form data
+            // Collect form data (UPDATED TO GRAB NEW FIELDS)
             const formData = {
                 name: document.getElementById('contact-name').value.trim(),
                 email: document.getElementById('contact-email').value.trim(),
                 phone: document.getElementById('contact-phone').value.trim(),
                 location: document.getElementById('contact-location').value.trim(),
-                project_type: document.getElementById('project-type').value
+                project_type: document.getElementById('project-type').value,
+                installation_time: document.getElementById('installation-time').value,
+                available_tomorrow: document.getElementById('available-tomorrow').value,
+                full_name: document.getElementById('full-name').value.trim(),
+                phone_number: document.getElementById('phone-number').value.trim(),
+                city: document.getElementById('city').value.trim(),
+                additional_phone: document.getElementById('additional-phone').value.trim()
             };
     
             // Show loading state
